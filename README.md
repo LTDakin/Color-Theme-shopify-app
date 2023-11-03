@@ -2,6 +2,9 @@
 
 This is a shopify app that reccomends color themes for the site based of the store's products.
 
-## App Architecture
-
-![Untitled-2023-08-31-1939](https://github.com/LTDakin/Color-Theme-shopify-app/assets/54085254/97c90720-d97f-4148-8e53-8af646136cdf)
+## Setup
+Requirements: Node.js, npm, Shopify Partners account
+1. Git clone this repository```git clone https://github.com/LTDakin/Color-Theme-shopify-app.git```
+2. Move to src ```cd {filename}```
+3. Install dependencies with ```npm i```
+4. To start in development mode run ```npm run dev```
