@@ -1,10 +1,17 @@
+import { Card, Text, Button } from "@shopify/polaris";
 import React from "react";
-import { Card, Text } from "@shopify/polaris";
+
+async function fetchProducts() {
+  console.log("hello world");
+}
 
 export function ImagesCard() {
   return (
     <>
-      <Card>Items that are being used to generate the color palletes</Card>
+      <Card padding="500">
+        Items that are being used to generate the color palletes
+        <Button onClick={fetchProducts}>Fetch Products</Button>
+      </Card>
     </>
   );
 }
