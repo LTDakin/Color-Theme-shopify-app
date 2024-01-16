@@ -29,7 +29,7 @@ export function ImagesCard() {
   return (
     <>
       <Card>
-        <h1>Suggested Color Pallete1</h1>
+        <h1>Suggested Color Pallete</h1>
         <Button onClick={fetchProducts}>Generate</Button>
       </Card>
     </>
