@@ -1,16 +1,36 @@
 import { Card, Text, Button } from "@shopify/polaris";
-import React from "react";
+import React, { useState } from "react";
 
-async function fetchProducts() {
-  console.log("hello world");
-}
+const fetchProducts = async (shopName, accessToken) => {
+  try {
+    const response = await fetch(
+      `https://${shopName}.myshopify.com/admin/api/2023-10/products.json`,
+      {
+        headers: {
+          "X-Shopify-Storefront-Access-Token": accessToken,
+        },
+      }
+    );
+
+    if (!response.ok) {
+      throw new Error("Failed to fetch products");
+    }
+
+    const data = await response.json();
+    setProducts(data.products);
+  } catch (error) {
+    console.error("Error fetching products:", error.message);
+  }
+};
 
 export function ImagesCard() {
+  const [products, setProducts] = useState();
+
   return (
     <>
-      <Card padding="500">
-        Items that are being used to generate the color palletes
-        <Button onClick={fetchProducts}>Fetch Products</Button>
+      <Card>
+        <h1>Suggested Color Pallete1</h1>
+        <Button onClick={fetchProducts}>Generate</Button>
       </Card>
     </>
   );
