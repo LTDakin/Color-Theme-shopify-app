@@ -1,12 +1,17 @@
 import { Card, Button } from "@shopify/polaris";
 import React, { useState } from "react";
+import { useAppQuery, useAuthenticatedFetch } from "../hooks";
 
 export function ImagesCard() {
   const [products, setProducts] = useState();
+  const fetch = useAuthenticatedFetch();
 
   const fetchProducts = async (shopName, accessToken) => {
-    // make a call to the app node js for the images of the products
-    // I dont think that you can call the admin api from the react code
+    console.log("Fetching All products from store");
+    const response = await fetch("/api/products");
+    if (response.ok) {
+      console.log(response);
+    }
   };
 
   return (
